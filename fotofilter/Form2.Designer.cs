@@ -39,6 +39,8 @@
             // trackBarR
             // 
             this.trackBarR.Location = new System.Drawing.Point(92, 12);
+            this.trackBarR.Maximum = 255;
+            this.trackBarR.Minimum = -255;
             this.trackBarR.Name = "trackBarR";
             this.trackBarR.Size = new System.Drawing.Size(178, 56);
             this.trackBarR.TabIndex = 0;
@@ -46,6 +48,8 @@
             // trackBarG
             // 
             this.trackBarG.Location = new System.Drawing.Point(92, 74);
+            this.trackBarG.Maximum = 255;
+            this.trackBarG.Minimum = -255;
             this.trackBarG.Name = "trackBarG";
             this.trackBarG.Size = new System.Drawing.Size(178, 56);
             this.trackBarG.TabIndex = 1;
@@ -53,6 +57,8 @@
             // trackBarB
             // 
             this.trackBarB.Location = new System.Drawing.Point(92, 136);
+            this.trackBarB.Maximum = 255;
+            this.trackBarB.Minimum = -255;
             this.trackBarB.Name = "trackBarB";
             this.trackBarB.Size = new System.Drawing.Size(178, 56);
             this.trackBarB.TabIndex = 2;

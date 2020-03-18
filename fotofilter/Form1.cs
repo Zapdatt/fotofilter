@@ -52,10 +52,10 @@ namespace fotofilter
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
-            int RGBSliderR = form2.trackBarR.Value / 100;
-            int RGBSliderG = form2.trackBarG.Value / 100;
-            int RGBsliderB = form2.trackBarB.Value / 100;
-
+            int RGBSliderR = form2.trackBarR.Value;
+            int RGBSliderG = form2.trackBarG.Value;
+            int RGBsliderB = form2.trackBarB.Value;
+            RGBVärden(RGBSliderR, RGBSliderG, RGBsliderB);
         }
 
         private void sparaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace fotofilter
             skiftaFärgkanalerToolStripMenuItem.Text = "Échange de couleur";
             monochromeToolStripMenuItem.Text = "Monochromatique";
             inverteraFärgerToolStripMenuItem.Text = "D'inverser les couleurs";
-            RGBFilterToolStripMenuItem.Text = "";
+            RGBFilterToolStripMenuItem.Text = "Valeurs RVB";
             languageToolStripMenuItem.Text = "Langages";
         }
 
@@ -159,14 +159,29 @@ namespace fotofilter
             }
             pbImage.Image = bitmap;
         }
-        private void RGBValues()
+        private void RGBVärden(int R, int G, int B)
         {
             for (int y = 0; y < bitmap.Height; y++)
             {
                 for (int x = 0; x < bitmap.Width; x++)
                 {
                     Color original = bitmap.GetPixel(x, y);
-                    Color modified = Color.FromArgb(255 - original.R, 255 - original.G, 255 - original.B);
+                    int NyR = original.R + R;
+                    if (NyR < 0)
+                    { NyR = 0; }
+                    if (NyR > 255)
+                    { NyR = 255; }
+                    int NyG = original.G + G;
+                    if (NyG < 0)
+                    { NyG = 0; }
+                    if (NyG > 255)
+                    { NyG = 255; }
+                    int NyB = original.B + B;
+                    if (NyB < 0)
+                    { NyB = 0; }
+                    if (NyB > 255)
+                    { NyB = 255; }
+                    Color modified = Color.FromArgb(NyR, NyG, NyB);
                     bitmap.SetPixel(x, y, modified);
                 }
             }
