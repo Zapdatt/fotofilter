@@ -31,6 +31,8 @@
             this.trackBarR = new System.Windows.Forms.TrackBar();
             this.trackBarG = new System.Windows.Forms.TrackBar();
             this.trackBarB = new System.Windows.Forms.TrackBar();
+            this.buttonOkay = new System.Windows.Forms.Button();
+            this.buttonNotOk = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).BeginInit();
@@ -63,11 +65,33 @@
             this.trackBarB.Size = new System.Drawing.Size(178, 56);
             this.trackBarB.TabIndex = 2;
             // 
+            // buttonOkay
+            // 
+            this.buttonOkay.Location = new System.Drawing.Point(13, 205);
+            this.buttonOkay.Name = "buttonOkay";
+            this.buttonOkay.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkay.TabIndex = 3;
+            this.buttonOkay.Text = "Confirm";
+            this.buttonOkay.UseVisualStyleBackColor = true;
+            this.buttonOkay.Click += new System.EventHandler(this.buttonOkay_Click);
+            // 
+            // buttonNotOk
+            // 
+            this.buttonNotOk.Location = new System.Drawing.Point(94, 205);
+            this.buttonNotOk.Name = "buttonNotOk";
+            this.buttonNotOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonNotOk.TabIndex = 4;
+            this.buttonNotOk.Text = "Abort";
+            this.buttonNotOk.UseVisualStyleBackColor = true;
+            this.buttonNotOk.Click += new System.EventHandler(this.buttonNotOk_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.buttonNotOk);
+            this.Controls.Add(this.buttonOkay);
             this.Controls.Add(this.trackBarB);
             this.Controls.Add(this.trackBarG);
             this.Controls.Add(this.trackBarR);
@@ -87,5 +111,7 @@
         public System.Windows.Forms.TrackBar trackBarR;
         public System.Windows.Forms.TrackBar trackBarG;
         public System.Windows.Forms.TrackBar trackBarB;
+        private System.Windows.Forms.Button buttonOkay;
+        private System.Windows.Forms.Button buttonNotOk;
     }
 }

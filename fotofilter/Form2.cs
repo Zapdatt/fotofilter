@@ -21,5 +21,16 @@ namespace fotofilter
         {
 
         }
+
+        private void buttonOkay_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void buttonNotOk_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

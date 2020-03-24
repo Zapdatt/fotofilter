@@ -52,10 +52,13 @@ namespace fotofilter
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
-            int RGBSliderR = form2.trackBarR.Value;
-            int RGBSliderG = form2.trackBarG.Value;
-            int RGBsliderB = form2.trackBarB.Value;
-            RGBVärden(RGBSliderR, RGBSliderG, RGBsliderB);
+            if (DialogResult == DialogResult.OK)
+            {
+                int RGBSliderR = form2.trackBarR.Value;
+                int RGBSliderG = form2.trackBarG.Value;
+                int RGBsliderB = form2.trackBarB.Value;
+                RGBVärden(RGBSliderR, RGBSliderG, RGBsliderB);
+            }
         }
 
         private void sparaToolStripMenuItem_Click(object sender, EventArgs e)
