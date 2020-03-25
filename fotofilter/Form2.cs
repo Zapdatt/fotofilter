@@ -15,13 +15,14 @@ namespace fotofilter
         public Form2()
         {
             InitializeComponent();
+            int RGBSliderR = trackBarR.Value;
+            int RGBSliderG = trackBarG.Value;
+            int RGBsliderB = trackBarB.Value;
+            if (RGBSliderR != 0)
+            {
+                colorPreview.BackColor = Color.FromArgb(RGBSliderR, RGBSliderG, RGBsliderB);
+            }
         }
-
-        private void trackBarB_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonOkay_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;

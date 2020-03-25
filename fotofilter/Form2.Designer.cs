@@ -33,6 +33,7 @@
             this.trackBarB = new System.Windows.Forms.TrackBar();
             this.buttonOkay = new System.Windows.Forms.Button();
             this.buttonNotOk = new System.Windows.Forms.Button();
+            this.colorPreview = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).BeginInit();
@@ -85,11 +86,22 @@
             this.buttonNotOk.UseVisualStyleBackColor = true;
             this.buttonNotOk.Click += new System.EventHandler(this.buttonNotOk_Click);
             // 
+            // colorPreview
+            // 
+            this.colorPreview.AutoSize = true;
+            this.colorPreview.BackColor = System.Drawing.Color.White;
+            this.colorPreview.Location = new System.Drawing.Point(175, 208);
+            this.colorPreview.Name = "colorPreview";
+            this.colorPreview.Size = new System.Drawing.Size(16, 17);
+            this.colorPreview.TabIndex = 6;
+            this.colorPreview.Text = "  ";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.colorPreview);
             this.Controls.Add(this.buttonNotOk);
             this.Controls.Add(this.buttonOkay);
             this.Controls.Add(this.trackBarB);
@@ -113,5 +125,6 @@
         public System.Windows.Forms.TrackBar trackBarB;
         private System.Windows.Forms.Button buttonOkay;
         private System.Windows.Forms.Button buttonNotOk;
+        private System.Windows.Forms.Label colorPreview;
     }
 }

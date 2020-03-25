@@ -45,6 +45,7 @@
             this.françaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swedishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miniNoiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -87,21 +88,21 @@
             // openImageToolStripMenuItem
             // 
             this.openImageToolStripMenuItem.Name = "openImageToolStripMenuItem";
-            this.openImageToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openImageToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.openImageToolStripMenuItem.Text = "Open Image";
             this.openImageToolStripMenuItem.Click += new System.EventHandler(this.openImageToolStripMenuItem_Click);
             // 
             // sparaToolStripMenuItem
             // 
             this.sparaToolStripMenuItem.Name = "sparaToolStripMenuItem";
-            this.sparaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.sparaToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.sparaToolStripMenuItem.Text = "Save";
             this.sparaToolStripMenuItem.Click += new System.EventHandler(this.sparaToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.avslutaToolStripMenuItem.Text = "Exit";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -111,7 +112,8 @@
             this.skiftaFärgkanalerToolStripMenuItem,
             this.monochromeToolStripMenuItem,
             this.inverteraFärgerToolStripMenuItem,
-            this.RGBFilterToolStripMenuItem});
+            this.RGBFilterToolStripMenuItem,
+            this.miniNoiseToolStripMenuItem});
             this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
             this.filterToolStripMenuItem.Size = new System.Drawing.Size(54, 24);
             this.filterToolStripMenuItem.Text = "Filter";
@@ -184,6 +186,13 @@
             this.日本語ToolStripMenuItem.Text = "日本語";
             this.日本語ToolStripMenuItem.Click += new System.EventHandler(this.日本語ToolStripMenuItem_Click);
             // 
+            // miniNoiseToolStripMenuItem
+            // 
+            this.miniNoiseToolStripMenuItem.Name = "miniNoiseToolStripMenuItem";
+            this.miniNoiseToolStripMenuItem.Size = new System.Drawing.Size(187, 26);
+            this.miniNoiseToolStripMenuItem.Text = "Mini Noise";
+            this.miniNoiseToolStripMenuItem.Click += new System.EventHandler(this.miniNoiseToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,6 +229,7 @@
         private System.Windows.Forms.ToolStripMenuItem inverteraFärgerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RGBFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miniNoiseToolStripMenuItem;
     }
 }
 
