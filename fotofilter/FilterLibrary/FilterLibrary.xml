@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FilterLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:FilterLibrary.Filters.MiniNoise(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            Adds some noise to the bitmap
+            </summary>
+            <param name="bitmap">The bitmap to change</param>
+            <param name="amount">The amount of noise (1-100)</param>
+        </member>
+        <member name="M:FilterLibrary.Filters.Clamp(System.Int32)">
+            <summary>
+            Clamps a value between 0 and 255
+            </summary>
+            <param name="number">The value to clamp</param>
+            <returns>The clamped value</returns>
+        </member>
+    </members>
+</doc>

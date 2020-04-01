@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using FilterLibrary;
+using FilterLibrary;
 
 namespace fotofilter
 {
@@ -64,7 +64,7 @@ namespace fotofilter
 
         private void miniNoiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FilterLibrary.Filters.MiniNoise(bitmap, 10);
+            FilterLibrary.Filters.MiniNoise(bitmap, 10);
         }
 
         private void sparaToolStripMenuItem_Click(object sender, EventArgs e)
