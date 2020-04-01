@@ -18,10 +18,8 @@ namespace fotofilter
             int RGBSliderR = trackBarR.Value;
             int RGBSliderG = trackBarG.Value;
             int RGBsliderB = trackBarB.Value;
-            if (RGBSliderR != 0)
-            {
-                colorPreview.BackColor = Color.FromArgb(RGBSliderR, RGBSliderG, RGBsliderB);
-            }
+            colorPreview.BackColor = Color.FromArgb(RGBSliderR, RGBSliderG, RGBsliderB);
+            colorPreview.Invalidate();
         }
         private void buttonOkay_Click(object sender, EventArgs e)
         {
@@ -32,6 +30,43 @@ namespace fotofilter
         private void buttonNotOk_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void fontDialog1_Apply(object sender, EventArgs e)
+        {
+
+        }
+
+        private void colorPreview_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBarR_ValueChanged(object sender, EventArgs e)
+        {
+            int RGBSliderR = trackBarR.Value;
+            int RGBSliderG = trackBarG.Value;
+            int RGBsliderB = trackBarB.Value;
+            colorPreview.BackColor = Color.FromArgb(RGBSliderR, RGBSliderG, RGBsliderB);
+            colorPreview.Invalidate();
+        }
+
+        private void trackBarG_ValueChanged(object sender, EventArgs e)
+        {
+            int RGBSliderR = trackBarR.Value;
+            int RGBSliderG = trackBarG.Value;
+            int RGBsliderB = trackBarB.Value;
+            colorPreview.BackColor = Color.FromArgb(RGBSliderR, RGBSliderG, RGBsliderB);
+            colorPreview.Invalidate();
+        }
+
+        private void trackBarB_ValueChanged(object sender, EventArgs e)
+        {
+            int RGBSliderR = trackBarR.Value;
+            int RGBSliderG = trackBarG.Value;
+            int RGBsliderB = trackBarB.Value;
+            colorPreview.BackColor = Color.FromArgb(RGBSliderR, RGBSliderG, RGBsliderB);
+            colorPreview.Invalidate();
         }
     }
 }

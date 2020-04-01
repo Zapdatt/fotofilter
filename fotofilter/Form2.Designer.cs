@@ -33,7 +33,8 @@
             this.trackBarB = new System.Windows.Forms.TrackBar();
             this.buttonOkay = new System.Windows.Forms.Button();
             this.buttonNotOk = new System.Windows.Forms.Button();
-            this.colorPreview = new System.Windows.Forms.Label();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.colorPreview = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).BeginInit();
@@ -47,6 +48,7 @@
             this.trackBarR.Name = "trackBarR";
             this.trackBarR.Size = new System.Drawing.Size(178, 56);
             this.trackBarR.TabIndex = 0;
+            this.trackBarR.ValueChanged += new System.EventHandler(this.trackBarR_ValueChanged);
             // 
             // trackBarG
             // 
@@ -56,6 +58,7 @@
             this.trackBarG.Name = "trackBarG";
             this.trackBarG.Size = new System.Drawing.Size(178, 56);
             this.trackBarG.TabIndex = 1;
+            this.trackBarG.ValueChanged += new System.EventHandler(this.trackBarG_ValueChanged);
             // 
             // trackBarB
             // 
@@ -65,6 +68,7 @@
             this.trackBarB.Name = "trackBarB";
             this.trackBarB.Size = new System.Drawing.Size(178, 56);
             this.trackBarB.TabIndex = 2;
+            this.trackBarB.ValueChanged += new System.EventHandler(this.trackBarB_ValueChanged);
             // 
             // buttonOkay
             // 
@@ -82,19 +86,21 @@
             this.buttonNotOk.Name = "buttonNotOk";
             this.buttonNotOk.Size = new System.Drawing.Size(75, 23);
             this.buttonNotOk.TabIndex = 4;
-            this.buttonNotOk.Text = "Abort";
+            this.buttonNotOk.Text = "Cancel";
             this.buttonNotOk.UseVisualStyleBackColor = true;
             this.buttonNotOk.Click += new System.EventHandler(this.buttonNotOk_Click);
             // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Apply += new System.EventHandler(this.fontDialog1_Apply);
+            // 
             // colorPreview
             // 
-            this.colorPreview.AutoSize = true;
-            this.colorPreview.BackColor = System.Drawing.Color.White;
-            this.colorPreview.Location = new System.Drawing.Point(175, 208);
+            this.colorPreview.BackColor = System.Drawing.SystemColors.Control;
+            this.colorPreview.Location = new System.Drawing.Point(176, 190);
             this.colorPreview.Name = "colorPreview";
-            this.colorPreview.Size = new System.Drawing.Size(16, 17);
-            this.colorPreview.TabIndex = 6;
-            this.colorPreview.Text = "  ";
+            this.colorPreview.Size = new System.Drawing.Size(36, 37);
+            this.colorPreview.TabIndex = 5;
             // 
             // Form2
             // 
@@ -125,6 +131,7 @@
         public System.Windows.Forms.TrackBar trackBarB;
         private System.Windows.Forms.Button buttonOkay;
         private System.Windows.Forms.Button buttonNotOk;
-        private System.Windows.Forms.Label colorPreview;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Panel colorPreview;
     }
 }
