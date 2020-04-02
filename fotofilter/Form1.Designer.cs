@@ -46,13 +46,16 @@
             this.françaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swedishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitRGBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(139, 44);
+            this.pbImage.Location = new System.Drawing.Point(12, 44);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(399, 349);
             this.pbImage.TabIndex = 1;
@@ -71,7 +74,7 @@
             this.languageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(550, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(422, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -113,7 +116,9 @@
             this.monochromeToolStripMenuItem,
             this.inverteraFärgerToolStripMenuItem,
             this.RGBFilterToolStripMenuItem,
-            this.miniNoiseToolStripMenuItem});
+            this.miniNoiseToolStripMenuItem,
+            this.bitRGBToolStripMenuItem,
+            this.bitRGBToolStripMenuItem1});
             this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
             this.filterToolStripMenuItem.Size = new System.Drawing.Size(56, 24);
             this.filterToolStripMenuItem.Text = "Filter";
@@ -121,7 +126,7 @@
             // skiftaFärgkanalerToolStripMenuItem
             // 
             this.skiftaFärgkanalerToolStripMenuItem.Name = "skiftaFärgkanalerToolStripMenuItem";
-            this.skiftaFärgkanalerToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.skiftaFärgkanalerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.skiftaFärgkanalerToolStripMenuItem.Text = "ColorShift";
             this.skiftaFärgkanalerToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.skiftaFärgkanalerToolStripMenuItem.Click += new System.EventHandler(this.skiftaFärgkanalerToolStripMenuItem_Click);
@@ -129,28 +134,28 @@
             // monochromeToolStripMenuItem
             // 
             this.monochromeToolStripMenuItem.Name = "monochromeToolStripMenuItem";
-            this.monochromeToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.monochromeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.monochromeToolStripMenuItem.Text = "Monochrome";
             this.monochromeToolStripMenuItem.Click += new System.EventHandler(this.monochromeToolStripMenuItem_Click);
             // 
             // inverteraFärgerToolStripMenuItem
             // 
             this.inverteraFärgerToolStripMenuItem.Name = "inverteraFärgerToolStripMenuItem";
-            this.inverteraFärgerToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.inverteraFärgerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.inverteraFärgerToolStripMenuItem.Text = "Invertera Färger";
             this.inverteraFärgerToolStripMenuItem.Click += new System.EventHandler(this.inverteraFärgerToolStripMenuItem_Click);
             // 
             // RGBFilterToolStripMenuItem
             // 
             this.RGBFilterToolStripMenuItem.Name = "RGBFilterToolStripMenuItem";
-            this.RGBFilterToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.RGBFilterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.RGBFilterToolStripMenuItem.Text = "RGBValues";
             this.RGBFilterToolStripMenuItem.Click += new System.EventHandler(this.RGBFilterToolStripMenuItem_Click);
             // 
             // miniNoiseToolStripMenuItem
             // 
             this.miniNoiseToolStripMenuItem.Name = "miniNoiseToolStripMenuItem";
-            this.miniNoiseToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
+            this.miniNoiseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.miniNoiseToolStripMenuItem.Text = "Mini Noise";
             this.miniNoiseToolStripMenuItem.Click += new System.EventHandler(this.miniNoiseToolStripMenuItem_Click);
             // 
@@ -193,11 +198,25 @@
             this.日本語ToolStripMenuItem.Text = "日本語";
             this.日本語ToolStripMenuItem.Click += new System.EventHandler(this.日本語ToolStripMenuItem_Click);
             // 
+            // bitRGBToolStripMenuItem
+            // 
+            this.bitRGBToolStripMenuItem.Name = "bitRGBToolStripMenuItem";
+            this.bitRGBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bitRGBToolStripMenuItem.Text = "1Bit RGB";
+            this.bitRGBToolStripMenuItem.Click += new System.EventHandler(this.bitRGBToolStripMenuItem_Click);
+            // 
+            // bitRGBToolStripMenuItem1
+            // 
+            this.bitRGBToolStripMenuItem1.Name = "bitRGBToolStripMenuItem1";
+            this.bitRGBToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.bitRGBToolStripMenuItem1.Text = "2Bit RGB";
+            this.bitRGBToolStripMenuItem1.Click += new System.EventHandler(this.bitRGBToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 405);
+            this.ClientSize = new System.Drawing.Size(422, 405);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -230,6 +249,9 @@
         private System.Windows.Forms.ToolStripMenuItem RGBFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miniNoiseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitRGBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bitRGBToolStripMenuItem1;
+        private System.Windows.Forms.SaveFileDialog saveFile;
     }
 }
 
