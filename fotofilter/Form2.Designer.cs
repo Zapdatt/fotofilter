@@ -1,6 +1,6 @@
 ﻿namespace fotofilter
 {
-    partial class Form2
+    partial class RGB
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,9 @@
             this.buttonNotOk = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.colorPreview = new System.Windows.Forms.Panel();
+            this.labelR = new System.Windows.Forms.Label();
+            this.LabelG = new System.Windows.Forms.Label();
+            this.LabelB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).BeginInit();
@@ -89,7 +92,7 @@
             this.buttonNotOk.Text = "Cancel";
             this.buttonNotOk.UseVisualStyleBackColor = true;
             this.buttonNotOk.Click += new System.EventHandler(this.buttonNotOk_Click);
-            //
+            // 
             // colorPreview
             // 
             this.colorPreview.BackColor = System.Drawing.SystemColors.Control;
@@ -98,11 +101,41 @@
             this.colorPreview.Size = new System.Drawing.Size(36, 37);
             this.colorPreview.TabIndex = 5;
             // 
-            // Form2
+            // labelR
+            // 
+            this.labelR.AutoSize = true;
+            this.labelR.Location = new System.Drawing.Point(69, 21);
+            this.labelR.Name = "labelR";
+            this.labelR.Size = new System.Drawing.Size(27, 17);
+            this.labelR.TabIndex = 6;
+            this.labelR.Text = "R -";
+            // 
+            // LabelG
+            // 
+            this.LabelG.AutoSize = true;
+            this.LabelG.Location = new System.Drawing.Point(68, 84);
+            this.LabelG.Name = "LabelG";
+            this.LabelG.Size = new System.Drawing.Size(28, 17);
+            this.LabelG.TabIndex = 7;
+            this.LabelG.Text = "G -";
+            // 
+            // LabelB
+            // 
+            this.LabelB.AutoSize = true;
+            this.LabelB.Location = new System.Drawing.Point(68, 147);
+            this.LabelB.Name = "LabelB";
+            this.LabelB.Size = new System.Drawing.Size(26, 17);
+            this.LabelB.TabIndex = 8;
+            this.LabelB.Text = "B -";
+            // 
+            // RGB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Controls.Add(this.LabelB);
+            this.Controls.Add(this.LabelG);
+            this.Controls.Add(this.labelR);
             this.Controls.Add(this.colorPreview);
             this.Controls.Add(this.buttonNotOk);
             this.Controls.Add(this.buttonOkay);
@@ -110,8 +143,8 @@
             this.Controls.Add(this.trackBarG);
             this.Controls.Add(this.trackBarR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "RGB";
+            this.Text = "RGB changer";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).EndInit();
@@ -129,5 +162,8 @@
         private System.Windows.Forms.Button buttonNotOk;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Panel colorPreview;
+        private System.Windows.Forms.Label labelR;
+        private System.Windows.Forms.Label LabelG;
+        private System.Windows.Forms.Label LabelB;
     }
 }

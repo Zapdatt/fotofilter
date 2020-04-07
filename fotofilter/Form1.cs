@@ -51,7 +51,7 @@ namespace fotofilter
 
         private void RGBFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            RGB form2 = new RGB();
             form2.ShowDialog();
 //            if (DialogResult == DialogResult.OK;)
 //            {
@@ -151,6 +151,17 @@ namespace fotofilter
             bitRGBToolStripMenuItem1.Text = "Deux bit RVB";
             languageToolStripMenuItem.Text = "Langages";
         }
+        private void creditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Credit form3 = new Credit();
+            form3.ShowDialog();
+        }
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            About form4 = new About();
+            form4.ShowDialog();
+        }
+
 
         private void SkiftaFärger()
         {

@@ -41,14 +41,17 @@
             this.inverteraFärgerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RGBFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miniNoiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bitRGBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.françaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swedishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.日本語ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bitRGBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bitRGBToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFile = new System.Windows.Forms.SaveFileDialog();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +74,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.filterToolStripMenuItem,
-            this.languageToolStripMenuItem});
+            this.languageToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(422, 28);
@@ -159,6 +163,20 @@
             this.miniNoiseToolStripMenuItem.Text = "Mini Noise";
             this.miniNoiseToolStripMenuItem.Click += new System.EventHandler(this.miniNoiseToolStripMenuItem_Click);
             // 
+            // bitRGBToolStripMenuItem
+            // 
+            this.bitRGBToolStripMenuItem.Name = "bitRGBToolStripMenuItem";
+            this.bitRGBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bitRGBToolStripMenuItem.Text = "1Bit RGB";
+            this.bitRGBToolStripMenuItem.Click += new System.EventHandler(this.bitRGBToolStripMenuItem_Click);
+            // 
+            // bitRGBToolStripMenuItem1
+            // 
+            this.bitRGBToolStripMenuItem1.Name = "bitRGBToolStripMenuItem1";
+            this.bitRGBToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.bitRGBToolStripMenuItem1.Text = "2Bit RGB";
+            this.bitRGBToolStripMenuItem1.Click += new System.EventHandler(this.bitRGBToolStripMenuItem1_Click);
+            // 
             // languageToolStripMenuItem
             // 
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -198,19 +216,28 @@
             this.日本語ToolStripMenuItem.Text = "日本語";
             this.日本語ToolStripMenuItem.Click += new System.EventHandler(this.日本語ToolStripMenuItem_Click);
             // 
-            // bitRGBToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.bitRGBToolStripMenuItem.Name = "bitRGBToolStripMenuItem";
-            this.bitRGBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bitRGBToolStripMenuItem.Text = "1Bit RGB";
-            this.bitRGBToolStripMenuItem.Click += new System.EventHandler(this.bitRGBToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creditToolStripMenuItem,
+            this.aboutToolStripMenuItem1});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
-            // bitRGBToolStripMenuItem1
+            // creditToolStripMenuItem
             // 
-            this.bitRGBToolStripMenuItem1.Name = "bitRGBToolStripMenuItem1";
-            this.bitRGBToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.bitRGBToolStripMenuItem1.Text = "2Bit RGB";
-            this.bitRGBToolStripMenuItem1.Click += new System.EventHandler(this.bitRGBToolStripMenuItem1_Click);
+            this.creditToolStripMenuItem.Name = "creditToolStripMenuItem";
+            this.creditToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.creditToolStripMenuItem.Text = "Credit";
+            this.creditToolStripMenuItem.Click += new System.EventHandler(this.creditToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem1.Text = "About";
+            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -252,6 +279,9 @@
         private System.Windows.Forms.ToolStripMenuItem bitRGBToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bitRGBToolStripMenuItem1;
         private System.Windows.Forms.SaveFileDialog saveFile;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creditToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
     }
 }
 

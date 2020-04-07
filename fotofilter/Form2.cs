@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace fotofilter
 {
-    public partial class Form2 : Form
+    public partial class RGB : Form
     {
-        public Form2()
+        public RGB()
         {
             InitializeComponent();
             int RGBSliderR = trackBarR.Value;
