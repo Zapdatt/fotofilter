@@ -89,11 +89,7 @@
             this.buttonNotOk.Text = "Cancel";
             this.buttonNotOk.UseVisualStyleBackColor = true;
             this.buttonNotOk.Click += new System.EventHandler(this.buttonNotOk_Click);
-            // 
-            // fontDialog1
-            // 
-            this.fontDialog1.Apply += new System.EventHandler(this.fontDialog1_Apply);
-            // 
+            //
             // colorPreview
             // 
             this.colorPreview.BackColor = System.Drawing.SystemColors.Control;

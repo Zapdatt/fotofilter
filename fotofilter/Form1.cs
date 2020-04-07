@@ -53,13 +53,13 @@ namespace fotofilter
         {
             Form2 form2 = new Form2();
             form2.ShowDialog();
-            if (DialogResult == DialogResult.OK)
-            {
-                int RGBSliderR = form2.trackBarR.Value;
-                int RGBSliderG = form2.trackBarG.Value;
-                int RGBsliderB = form2.trackBarB.Value;
-                RGBVärden(RGBSliderR, RGBSliderG, RGBsliderB);
-            }
+//            if (DialogResult == DialogResult.OK;)
+//            {
+                int RGBSliderRF = form2.trackBarR.Value;
+                int RGBSliderGF = form2.trackBarG.Value;
+                int RGBsliderBF = form2.trackBarB.Value;
+                RGBVärden(RGBSliderRF, RGBSliderGF, RGBsliderBF);
+//            }
         }
 
         private void miniNoiseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,24 +192,24 @@ namespace fotofilter
             }
             pbImage.Image = bitmap;
         }
-        private void RGBVärden(int R, int G, int B)
+        private void RGBVärden(int RF, int GF, int BF)
         {
             for (int y = 0; y < bitmap.Height; y++)
             {
                 for (int x = 0; x < bitmap.Width; x++)
                 {
                     Color original = bitmap.GetPixel(x, y);
-                    int NyR = original.R + R;
+                    int NyR = original.R + RF;
                     if (NyR < 0)
                     { NyR = 0; }
                     if (NyR > 255)
                     { NyR = 255; }
-                    int NyG = original.G + G;
+                    int NyG = original.G + GF;
                     if (NyG < 0)
                     { NyG = 0; }
                     if (NyG > 255)
                     { NyG = 255; }
-                    int NyB = original.B + B;
+                    int NyB = original.B + BF;
                     if (NyB < 0)
                     { NyB = 0; }
                     if (NyB > 255)
