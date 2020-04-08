@@ -13,6 +13,11 @@ namespace fotofilter
 {
     public partial class Form1 : Form
     {
+        bool Swedish = false;
+        bool English = true;
+        bool Japanese = false;
+        bool French = false;
+
         Bitmap bitmap;
         public Form1()
         {
@@ -52,6 +57,30 @@ namespace fotofilter
         private void RGBFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RGB form2 = new RGB();
+            if (Swedish == true)
+            {
+                form2.buttonOkay.Text = "Acceptera";
+                form2.buttonNotOk.Text = "Avbryt";
+                form2.LabelG.Text = "G -";
+            }
+            else if (English == true)
+            {
+                form2.buttonOkay.Text = "Confirm";
+                form2.buttonNotOk.Text = "Cancel";
+                form2.LabelG.Text = "G -";
+            }
+            else if (Japanese == true)
+            {
+                form2.buttonOkay.Text = "確認する";
+                form2.buttonNotOk.Text = "キャンセル";
+                form2.LabelG.Text = "G -";
+            }
+            else if (French == true)
+            {
+                form2.buttonOkay.Text = "Confirmer";
+                form2.buttonNotOk.Text = "Annuler";
+                form2.LabelG.Text = "V";
+            }
             form2.ShowDialog();
 //            if (DialogResult == DialogResult.OK;)
 //            {
@@ -59,7 +88,7 @@ namespace fotofilter
                 int RGBSliderGF = form2.trackBarG.Value;
                 int RGBsliderBF = form2.trackBarB.Value;
                 RGBVärden(RGBSliderRF, RGBSliderGF, RGBsliderBF);
-//            }
+            //            }
         }
 
         private void miniNoiseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,7 +104,13 @@ namespace fotofilter
         {
             TwoBitRGB();
         }
-
+        private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Brightness form5 = new Brightness();
+            form5.ShowDialog();
+            int SliderBright = form5.trackBarBright.Value;
+            Brightness(SliderBright);
+        }
         private void sparaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFile.ShowDialog() == DialogResult.OK)
@@ -86,7 +121,11 @@ namespace fotofilter
 
         private void svenskaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fileToolStripMenuItem.Text = "File";
+            Swedish = true;
+            English = false;
+            Japanese = false;
+            French = false;
+            fileToolStripMenuItem.Text = "Fil";
             openImageToolStripMenuItem.Text = "Öppna bild";
             sparaToolStripMenuItem.Text = "Spara fil";
             avslutaToolStripMenuItem.Text = "Avsluta";
@@ -98,11 +137,16 @@ namespace fotofilter
             miniNoiseToolStripMenuItem.Text = "Minibrus";
             bitRGBToolStripMenuItem.Text = "Enbits RGB";
             bitRGBToolStripMenuItem1.Text = "Twobits RGB";
+            brightnessToolStripMenuItem.Text = "Ljusstyrka";
             languageToolStripMenuItem.Text = "Språk";
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Swedish = false;
+            English = true;
+            Japanese = false;
+            French = false;
             fileToolStripMenuItem.Text = "Fil";
             openImageToolStripMenuItem.Text = "Open Image";
             sparaToolStripMenuItem.Text = "Save file";
@@ -115,11 +159,16 @@ namespace fotofilter
             miniNoiseToolStripMenuItem.Text = "Mini Noice";
             bitRGBToolStripMenuItem.Text = "Single bit RGB";
             bitRGBToolStripMenuItem1.Text = "Double bit RGB";
+            brightnessToolStripMenuItem.Text = "Brightness";
             languageToolStripMenuItem.Text = "Language";
         }
 
         private void 日本語ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Swedish = false;
+            English = false;
+            Japanese = true;
+            French = false;
             fileToolStripMenuItem.Text = "ファイル";
             openImageToolStripMenuItem.Text = "絵を開ける";
             sparaToolStripMenuItem.Text = "新規保管";
@@ -132,11 +181,16 @@ namespace fotofilter
             miniNoiseToolStripMenuItem.Text = "少し不鮮明";
             bitRGBToolStripMenuItem.Text = "一ビットＲＧＢ";
             bitRGBToolStripMenuItem1.Text = "二ビットＲＧＢ";
+            brightnessToolStripMenuItem.Text = "明度";
             languageToolStripMenuItem.Text = "翻訳";
         }
 
         private void françaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Swedish = false;
+            English = false;
+            Japanese = false;
+            French = true;
             fileToolStripMenuItem.Text = "Fichier";
             openImageToolStripMenuItem.Text = "Ouvrir une image";
             sparaToolStripMenuItem.Text = "Enregistrer";
@@ -149,6 +203,7 @@ namespace fotofilter
             miniNoiseToolStripMenuItem.Text = "Bruit visuel mini";
             bitRGBToolStripMenuItem.Text = "Une bit RVB";
             bitRGBToolStripMenuItem1.Text = "Deux bit RVB";
+            brightnessToolStripMenuItem.Text = "Luminosité";
             languageToolStripMenuItem.Text = "Langages";
         }
         private void creditToolStripMenuItem_Click(object sender, EventArgs e)
@@ -318,6 +373,34 @@ namespace fotofilter
                         B = 255;
                     }
                     Color modified = Color.FromArgb(R, G, B);
+                    bitmap.SetPixel(x, y, modified);
+                }
+            }
+            pbImage.Image = bitmap;
+        }
+        private void Brightness(int Bright)
+        {
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    Color original = bitmap.GetPixel(x, y);
+                    int NyR = original.R + Bright;
+                    if (NyR < 0)
+                    { NyR = 0; }
+                    if (NyR > 255)
+                    { NyR = 255; }
+                    int NyG = original.G + Bright;
+                    if (NyG < 0)
+                    { NyG = 0; }
+                    if (NyG > 255)
+                    { NyG = 255; }
+                    int NyB = original.B + Bright;
+                    if (NyB < 0)
+                    { NyB = 0; }
+                    if (NyB > 255)
+                    { NyB = 255; }
+                    Color modified = Color.FromArgb(NyR, NyG, NyB);
                     bitmap.SetPixel(x, y, modified);
                 }
             }

@@ -158,12 +158,12 @@
         public System.Windows.Forms.TrackBar trackBarR;
         public System.Windows.Forms.TrackBar trackBarG;
         public System.Windows.Forms.TrackBar trackBarB;
-        private System.Windows.Forms.Button buttonOkay;
-        private System.Windows.Forms.Button buttonNotOk;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Panel colorPreview;
         private System.Windows.Forms.Label labelR;
-        private System.Windows.Forms.Label LabelG;
         private System.Windows.Forms.Label LabelB;
+        public System.Windows.Forms.Button buttonOkay;
+        public System.Windows.Forms.Button buttonNotOk;
+        public System.Windows.Forms.Label LabelG;
     }
 }
