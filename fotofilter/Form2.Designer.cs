@@ -45,7 +45,7 @@
             // 
             // trackBarR
             // 
-            this.trackBarR.Location = new System.Drawing.Point(92, 12);
+            this.trackBarR.Location = new System.Drawing.Point(34, 12);
             this.trackBarR.Maximum = 255;
             this.trackBarR.Minimum = -255;
             this.trackBarR.Name = "trackBarR";
@@ -55,7 +55,7 @@
             // 
             // trackBarG
             // 
-            this.trackBarG.Location = new System.Drawing.Point(92, 74);
+            this.trackBarG.Location = new System.Drawing.Point(34, 74);
             this.trackBarG.Maximum = 255;
             this.trackBarG.Minimum = -255;
             this.trackBarG.Name = "trackBarG";
@@ -65,7 +65,7 @@
             // 
             // trackBarB
             // 
-            this.trackBarB.Location = new System.Drawing.Point(92, 136);
+            this.trackBarB.Location = new System.Drawing.Point(34, 136);
             this.trackBarB.Maximum = 255;
             this.trackBarB.Minimum = -255;
             this.trackBarB.Name = "trackBarB";
@@ -104,7 +104,7 @@
             // labelR
             // 
             this.labelR.AutoSize = true;
-            this.labelR.Location = new System.Drawing.Point(69, 21);
+            this.labelR.Location = new System.Drawing.Point(8, 21);
             this.labelR.Name = "labelR";
             this.labelR.Size = new System.Drawing.Size(27, 17);
             this.labelR.TabIndex = 6;
@@ -113,7 +113,7 @@
             // LabelG
             // 
             this.LabelG.AutoSize = true;
-            this.LabelG.Location = new System.Drawing.Point(68, 84);
+            this.LabelG.Location = new System.Drawing.Point(8, 84);
             this.LabelG.Name = "LabelG";
             this.LabelG.Size = new System.Drawing.Size(28, 17);
             this.LabelG.TabIndex = 7;
@@ -122,7 +122,7 @@
             // LabelB
             // 
             this.LabelB.AutoSize = true;
-            this.LabelB.Location = new System.Drawing.Point(68, 147);
+            this.LabelB.Location = new System.Drawing.Point(8, 150);
             this.LabelB.Name = "LabelB";
             this.LabelB.Size = new System.Drawing.Size(26, 17);
             this.LabelB.TabIndex = 8;
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.ClientSize = new System.Drawing.Size(226, 245);
             this.Controls.Add(this.LabelB);
             this.Controls.Add(this.LabelG);
             this.Controls.Add(this.labelR);

@@ -117,4 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ContentLabel.Text" xml:space="preserve">
+    <value>› Thank you for downloading, this VB is not yet complete, 
+     so please be patient and wait for further updates.
+› Current version is alpha test version for limited distrubution. 
+
+› Character design is not finalized and is just a placeholder,
+     Clear will most likely not be the character for this VB.
+
+› Things you are not allowed to do:
+Redistrubute the contents of this voicebank without given permission.
+Use voicebank for commercial gain. 
+Edit the voicebank. 
+
+for further inquiries please contact: ------
+
+› ‚µ‚Ä‚Í‚¢‚¯‚È‚¢‚±‚Æ
+’†g‚ð–³’f‚Å”z•z
+¤—p‚Ìê‡
+•ÒW‚·‚é</value>
+  </data>
 </root>
