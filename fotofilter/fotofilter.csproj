@@ -36,6 +36,9 @@
     <Reference Include="FilterLibrary">
       <HintPath>FilterLibrary\FilterLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="GabrielLibrary">
+      <HintPath>GabrielLibrary\GabrielLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Amount.Designer.cs">
+      <DependentUpon>Amount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Brightness.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Amount.resx">
+      <DependentUpon>Amount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Brightness.resx">
       <DependentUpon>Brightness.cs</DependentUpon>
     </EmbeddedResource>

@@ -45,7 +45,7 @@
             // 
             // trackBarR
             // 
-            this.trackBarR.Location = new System.Drawing.Point(34, 12);
+            this.trackBarR.Location = new System.Drawing.Point(45, 12);
             this.trackBarR.Maximum = 255;
             this.trackBarR.Minimum = -255;
             this.trackBarR.Name = "trackBarR";
@@ -55,7 +55,7 @@
             // 
             // trackBarG
             // 
-            this.trackBarG.Location = new System.Drawing.Point(34, 74);
+            this.trackBarG.Location = new System.Drawing.Point(46, 74);
             this.trackBarG.Maximum = 255;
             this.trackBarG.Minimum = -255;
             this.trackBarG.Name = "trackBarG";
@@ -65,7 +65,7 @@
             // 
             // trackBarB
             // 
-            this.trackBarB.Location = new System.Drawing.Point(34, 136);
+            this.trackBarB.Location = new System.Drawing.Point(46, 136);
             this.trackBarB.Maximum = 255;
             this.trackBarB.Minimum = -255;
             this.trackBarB.Name = "trackBarB";
@@ -75,9 +75,9 @@
             // 
             // buttonOkay
             // 
-            this.buttonOkay.Location = new System.Drawing.Point(13, 205);
+            this.buttonOkay.Location = new System.Drawing.Point(13, 190);
             this.buttonOkay.Name = "buttonOkay";
-            this.buttonOkay.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkay.Size = new System.Drawing.Size(84, 38);
             this.buttonOkay.TabIndex = 3;
             this.buttonOkay.Text = "Confirm";
             this.buttonOkay.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@
             // 
             // buttonNotOk
             // 
-            this.buttonNotOk.Location = new System.Drawing.Point(94, 205);
+            this.buttonNotOk.Location = new System.Drawing.Point(103, 191);
             this.buttonNotOk.Name = "buttonNotOk";
-            this.buttonNotOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonNotOk.Size = new System.Drawing.Size(85, 38);
             this.buttonNotOk.TabIndex = 4;
             this.buttonNotOk.Text = "Cancel";
             this.buttonNotOk.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             // colorPreview
             // 
             this.colorPreview.BackColor = System.Drawing.SystemColors.Control;
-            this.colorPreview.Location = new System.Drawing.Point(176, 190);
+            this.colorPreview.Location = new System.Drawing.Point(194, 191);
             this.colorPreview.Name = "colorPreview";
             this.colorPreview.Size = new System.Drawing.Size(36, 37);
             this.colorPreview.TabIndex = 5;
@@ -104,7 +104,7 @@
             // labelR
             // 
             this.labelR.AutoSize = true;
-            this.labelR.Location = new System.Drawing.Point(8, 21);
+            this.labelR.Location = new System.Drawing.Point(12, 21);
             this.labelR.Name = "labelR";
             this.labelR.Size = new System.Drawing.Size(27, 17);
             this.labelR.TabIndex = 6;
@@ -113,7 +113,7 @@
             // LabelG
             // 
             this.LabelG.AutoSize = true;
-            this.LabelG.Location = new System.Drawing.Point(8, 84);
+            this.LabelG.Location = new System.Drawing.Point(12, 84);
             this.LabelG.Name = "LabelG";
             this.LabelG.Size = new System.Drawing.Size(28, 17);
             this.LabelG.TabIndex = 7;
@@ -122,7 +122,7 @@
             // LabelB
             // 
             this.LabelB.AutoSize = true;
-            this.LabelB.Location = new System.Drawing.Point(8, 150);
+            this.LabelB.Location = new System.Drawing.Point(14, 150);
             this.LabelB.Name = "LabelB";
             this.LabelB.Size = new System.Drawing.Size(26, 17);
             this.LabelB.TabIndex = 8;
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(226, 245);
+            this.ClientSize = new System.Drawing.Size(242, 245);
             this.Controls.Add(this.LabelB);
             this.Controls.Add(this.LabelG);
             this.Controls.Add(this.labelR);
@@ -144,7 +144,7 @@
             this.Controls.Add(this.trackBarR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RGB";
-            this.Text = "RGB changer";
+            this.Text = "RGB Values";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).EndInit();

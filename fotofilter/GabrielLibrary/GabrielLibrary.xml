@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GabrielLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:GabrielLibrary.Filter">
+            <summary>
+            Bitmap or image manipulation 
+            </summary>
+        </member>
+        <member name="M:GabrielLibrary.Filter.Blur(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            Applies a blur effect to the image
+            </summary>
+            <param name="image">The bitmap you want to apply the effect to</param>
+            <param name="Factor">How strong you want the blur effect to be, the larger the blurrier</param>
+        </member>
+        <member name="M:GabrielLibrary.Filter.Grains(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            Applies grains to the image
+            </summary>
+            <param name="image">The bitmap you want to apply the effect to</param>
+            <param name="grainFactor">The strength of the grain, must be positive</param>
+        </member>
+        <member name="M:GabrielLibrary.Filter.Monochrome(System.Drawing.Bitmap)">
+            <summary>
+            Turns the image monochrome
+            </summary>
+            <param name="image">The bitmap you want to apply the effect to</param>
+        </member>
+        <member name="M:GabrielLibrary.Filter.AbsoluteColor(System.Drawing.Bitmap)">
+            <summary>
+            Turns the image into the absolute colors
+            </summary>
+            <param name="image">The bitmap you want to apply the effect to</param>
+        </member>
+    </members>
+</doc>

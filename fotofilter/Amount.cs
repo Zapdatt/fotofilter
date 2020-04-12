@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace fotofilter
 {
-    public partial class Brightness : Form
+    public partial class Amount : Form
     {
-        public Brightness()
+        public Amount()
         {
             InitializeComponent();
         }
-        private void buttonOkay_Click_1(object sender, EventArgs e) //Om användaren trycker okay blir dialog result okay och rutan stängs
+
+        private void buttonNotOk_Click(object sender, EventArgs e) //Om användaren trycker cancel stängs rutan
+        {
+            Close();
+        }
+        private void buttonOkay_Click(object sender, EventArgs e) //Om användaren trycker okay blir dialogresult okay och rutan stängs
         {
             DialogResult = DialogResult.OK;
             Close();
         }
-
-        private void buttonNotOk_Click_1(object sender, EventArgs e) //om användaren trycker Cancel stängs rutan.
-        {
-            Close();
-        }
-
     }
 }

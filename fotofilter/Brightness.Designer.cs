@@ -45,9 +45,9 @@
             // 
             // buttonNotOk
             // 
-            this.buttonNotOk.Location = new System.Drawing.Point(112, 56);
+            this.buttonNotOk.Location = new System.Drawing.Point(105, 56);
             this.buttonNotOk.Name = "buttonNotOk";
-            this.buttonNotOk.Size = new System.Drawing.Size(75, 23);
+            this.buttonNotOk.Size = new System.Drawing.Size(85, 34);
             this.buttonNotOk.TabIndex = 6;
             this.buttonNotOk.Text = "Cancel";
             this.buttonNotOk.UseVisualStyleBackColor = true;
@@ -57,7 +57,7 @@
             // 
             this.buttonOkay.Location = new System.Drawing.Point(12, 56);
             this.buttonOkay.Name = "buttonOkay";
-            this.buttonOkay.Size = new System.Drawing.Size(75, 23);
+            this.buttonOkay.Size = new System.Drawing.Size(87, 34);
             this.buttonOkay.TabIndex = 5;
             this.buttonOkay.Text = "Confirm";
             this.buttonOkay.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(199, 90);
+            this.ClientSize = new System.Drawing.Size(201, 102);
             this.Controls.Add(this.buttonNotOk);
             this.Controls.Add(this.buttonOkay);
             this.Controls.Add(this.trackBarBright);
@@ -83,7 +83,7 @@
         #endregion
 
         public System.Windows.Forms.TrackBar trackBarBright;
-        private System.Windows.Forms.Button buttonNotOk;
-        private System.Windows.Forms.Button buttonOkay;
+        public System.Windows.Forms.Button buttonNotOk;
+        public System.Windows.Forms.Button buttonOkay;
     }
 }

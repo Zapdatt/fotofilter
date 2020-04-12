@@ -38,7 +38,7 @@
             this.ContentLabel.AutoSize = true;
             this.ContentLabel.Location = new System.Drawing.Point(12, 64);
             this.ContentLabel.Name = "ContentLabel";
-            this.ContentLabel.Size = new System.Drawing.Size(443, 306);
+            this.ContentLabel.Size = new System.Drawing.Size(449, 153);
             this.ContentLabel.TabIndex = 0;
             this.ContentLabel.Text = resources.GetString("ContentLabel.Text");
             // 
@@ -51,12 +51,13 @@
             this.HeaderLabel.Size = new System.Drawing.Size(172, 55);
             this.HeaderLabel.TabIndex = 1;
             this.HeaderLabel.Text = "About";
+            this.HeaderLabel.DoubleClick += new System.EventHandler(this.HeaderLabel_DoubleClick);
             // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 383);
+            this.ClientSize = new System.Drawing.Size(460, 238);
             this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.ContentLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

@@ -117,15 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContentLabel.Text" xml:space="preserve">
-    <value>› Thank you for downloading, the undo button is currently non working
-   and I am currently unnable to fix it. This program also has a few
-   features missing which I am unable to add because of a lack of time.
-
-› Things you are not allowed to do:
-   Redistrubute the without given permission.
-   Use for commercial  without credit gain. 
-
-› For further inquiries please contact: Olle.allbrink@gmail.com</value>
-  </data>
 </root>
