@@ -36,9 +36,6 @@
     <Reference Include="FilterLibrary">
       <HintPath>FilterLibrary\FilterLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="GabrielLibrary">
-      <HintPath>GabrielLibrary\GabrielLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
