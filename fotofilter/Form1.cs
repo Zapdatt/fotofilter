@@ -13,11 +13,12 @@ namespace fotofilter
 {
     public partial class MainForm : Form
     {
-        //Variabler för språk, bitmap och en lista skapas. Engelska är standard språket.
+        //Variabler för språk, bitmap och en lista skapas. Engelska är standard språket. Variabler för themes skapas, light är standard.
         bool Swedish = false;
         bool English = true;
         bool Japanese = false;
         bool French = false;
+        bool Opened = false;
 
         Bitmap bitmap;
 
@@ -37,6 +38,7 @@ namespace fotofilter
                 pbImage.Height = bitmap.Height;
                 Width = bitmap.Width + 33;
                 Height = bitmap.Height + 83;
+                Opened = true;
             }
             bildlistan();
         }
@@ -50,28 +52,59 @@ namespace fotofilter
         { // När användaren trycker på redo kontrollerar programmet först om positionen i listan av bildhistoriken är över 0 (om någon ändring faktist har skett.)
             if (listpos > 0)
             {
-                listpos--; //Den nuvarande positionen minskar, picturebox blir bilden på den positionen, picturebox uppdateras.
+                listpos--; //Den nuvarande positionen minskar, picturebox blir bilden på den positionen, picturebox uppdateras. Kvarvarande bilder i listan tas bort.
                 pbImage.Image = versioner[listpos];
+                bitmap = versioner[listpos];
                 pbImage.Refresh();
+                versioner.RemoveRange(listpos, versioner.Count - listpos);
+            }
+            else //Om positionen inte är över 0 alltså den är 0 blir bilden som den var när man öppnade den. (Detta finns för att efter att man trycker på undo så blir den första ändringen position 0, därför kan den inte gå tillbaka och kräver att man laddar om bilden istället).
+            {
+                bitmap = new Bitmap(openFile.FileName);
+                pbImage.Image = bitmap;
             }
         }
 
         private void skiftaFärgkanalerToolStripMenuItem_Click(object sender, EventArgs e)
-        { //När användaren trycker på ett filter körs först fuktionen för det filtret och sedan funktionen "bildlistan" som ser till att bildhistoriken uppdateras. Detta är samma för alla som endast innehåller  sin egna fuktion och "bildlistan".
-            SkiftaFärger(); 
-            bildlistan();
+        { //När användaren trycker på ett filter kontrolleras det först om en bild har öppnats om en bild ej har öppnats visas ett felmedelande, om en bild är vald körs först fuktionen för det filtret och sedan funktionen "bildlistan" som ser till att bildhistoriken uppdateras. Detta är samma för alla filter då de främst innehåller sina egna filter. 
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                SkiftaFärger();
+                bildlistan();
+            }
         }
 
         private void monochromeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Monochrome();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                Monochrome();
+                bildlistan();
+            }
         }
 
         private void inverteraFärgerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InverteraFärger();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                InverteraFärger();
+                bildlistan();
+            }
         }
 
         private void RGBFilterToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,28 +134,53 @@ namespace fotofilter
                 form2.buttonNotOk.Text = "Annuler";
                 form2.LabelG.Text = "V -";
             }
-            form2.ShowDialog(); // Efter att texten ändrats visas form2, här kan användaren välja sina RGB värden.
-            if (form2.DialogResult == DialogResult.OK) //Om användaren trycker på okej läggs värdena i variabler som förs in i fuktionen "RGBvärden"
+
+            if (!Opened)
             {
-            int RGBSliderRF = form2.trackBarR.Value;
-            int RGBSliderGF = form2.trackBarG.Value;
-            int RGBsliderBF = form2.trackBarB.Value;
-            RGBVärden(RGBSliderRF, RGBSliderGF, RGBsliderBF);
-            bildlistan();
-            } 
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                form2.ShowDialog(); // Efter att texten ändrats visas form2, här kan användaren välja sina RGB värden.
+                if (form2.DialogResult == DialogResult.OK) //Om användaren trycker på okej läggs värdena i variabler som förs in i fuktionen "RGBvärden"
+                {
+                    int RGBSliderRF = form2.trackBarR.Value;
+                    int RGBSliderGF = form2.trackBarG.Value;
+                    int RGBsliderBF = form2.trackBarB.Value;
+                    RGBVärden(RGBSliderRF, RGBSliderGF, RGBsliderBF);
+                    bildlistan();
+                } 
+            }
         }
 
         private void miniNoiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FilterLibrary.Filters.MiniNoise(bitmap, 10); //Detta filter var skapat av Martin och det står därför "FilterLibrary.Filter innan fuktionen.
-            pbImage.Refresh(); //Picturebox uppdateras
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                FilterLibrary.Filters.MiniNoise(bitmap, 10); //Detta filter var skapat av Martin och det står därför "FilterLibrary.Filter innan fuktionen.
+                pbImage.Refresh(); //Picturebox uppdateras
+                bildlistan();
+            }
         }
         private void megaNoiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FilterLibrary.Filters.MiniNoise(bitmap, 100);
-            pbImage.Refresh();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                FilterLibrary.Filters.MiniNoise(bitmap, 100);
+                pbImage.Refresh();
+                bildlistan();
+            }
         }
         private void NoiseToolStripMenuItem_Click(object sender, EventArgs e)
         { //Likväl RGB så skapas först form och sen ändras texten så att det stämmer överens med det språk användaren valt.
@@ -147,29 +205,61 @@ namespace fotofilter
                 form6.buttonOkay.Text = "Confirmer";
                 form6.buttonNotOk.Text = "Annuler";
             }
-            form6.ShowDialog(); //Form6 visas och användaren väljer till vilken grad de vill att "mininoise" ska användas.
-            if (form6.DialogResult == DialogResult.OK) //Om användaren trycker okej tas värdet ut och förs in i funktionen och bilden ändras.
+
+            if (!Opened)
             {
-                int SliderAmount = form6.trackBarAmount.Value;
-                FilterLibrary.Filters.MiniNoise(bitmap, SliderAmount);
-                pbImage.Refresh();
-                bildlistan();
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                form6.ShowDialog(); //Form6 visas och användaren väljer till vilken grad de vill att "mininoise" ska användas.
+                if (form6.DialogResult == DialogResult.OK) //Om användaren trycker okej tas värdet ut och förs in i funktionen och bilden ändras.
+                {
+                    int SliderAmount = form6.trackBarAmount.Value;
+                    FilterLibrary.Filters.MiniNoise(bitmap, SliderAmount);
+                    pbImage.Refresh();
+                    bildlistan();
+                }
             }
         }
 
         private void bitRGBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OneBitRGB();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                OneBitRGB();
+                bildlistan();
+            }
         }
         private void bitRGBToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            TwoBitRGB();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                TwoBitRGB();
+                bildlistan();
+            }
         }
         private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
         { //En ny form skapas och texten ändras beroende på språk.
-            Brightness form5 = new Brightness();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                Brightness form5 = new Brightness();
             if (Swedish == true)
             {
                 form5.buttonOkay.Text = "Bekräfta";
@@ -190,44 +280,86 @@ namespace fotofilter
                 form5.buttonOkay.Text = "Confirmer";
                 form5.buttonNotOk.Text = "Annuler";
             }
-            form5.ShowDialog(); //Form5 visas, om användaren trycker okej tas värdet från value och stoppas in i funktionen.
-            if (form5.DialogResult == DialogResult.OK)
-            {
-                int SliderBright = form5.trackBarBright.Value;
-                Brightness(SliderBright);
-                bildlistan();
+                form5.ShowDialog(); //Form5 visas, om användaren trycker okej tas värdet från value och stoppas in i funktionen.
+                if (form5.DialogResult == DialogResult.OK)
+                {
+                    int SliderBright = form5.trackBarBright.Value;
+                    Brightness(SliderBright);
+                    bildlistan();
+                }
             }
         }
         private void rotate90ToolStripMenuItem_Click(object sender, EventArgs e)
         { //Bitmapen roteras med hjälp av "RotateFlip" som redan finns. Därefter uppdateras picturebox.
-            bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            pbImage.Refresh();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                bitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                pbImage.Refresh();
+                bildlistan();
+            }
         }
         private void rotate90ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            bitmap.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            pbImage.Refresh();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                bitmap.RotateFlip(RotateFlipType.Rotate270FlipNone);
+                pbImage.Refresh();
+                bildlistan();
+            }
         }
         private void flipToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bitmap.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            pbImage.Refresh();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                bitmap.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                pbImage.Refresh();
+                bildlistan();
+            }
         }
         private void flipVerticallyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bitmap.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            pbImage.Refresh();
-            bildlistan();
+            if (!Opened)
+            {
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                bitmap.RotateFlip(RotateFlipType.RotateNoneFlipY);
+                pbImage.Refresh();
+                bildlistan();
+            }
         }
         private void sparaToolStripMenuItem_Click(object sender, EventArgs e)
         { // Om användaren trycker på svara visas en ruta där användaren kan spara filen på sin dator.
-            if (saveFile.ShowDialog() == DialogResult.OK)
+            if (!Opened)
             {
-                bitmap.Save(saveFile.FileName);
-                bildlistan();
+                Warning form5 = new Warning();
+                form5.ShowDialog();
+            }
+            else
+            {
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    saveFile.DefaultExt = "png";
+                    bitmap.Save(saveFile.FileName);
+                    bildlistan();
+                }
             }
         }
 
@@ -244,11 +376,13 @@ namespace fotofilter
             editToolStripMenuItem.Text = "Ändra";
             undoToolStripMenuItem.Text = "Ångra";
             filterToolStripMenuItem.Text = "Filter";
-            skiftaFärgkanalerToolStripMenuItem.Text = "Skifta färger";
+            skiftaFärgkanalerToolStripMenuItem.Text = "Skifta Färger";
             inverteraFärgerToolStripMenuItem.Text = "Inverterade Färger";
             monochromeToolStripMenuItem.Text = "Svartvit";
             RGBFilterToolStripMenuItem.Text = "RGB Värden";
             miniNoiseToolStripMenuItem.Text = "Minibrus";
+            megaNoiseToolStripMenuItem.Text = "Megabrus";
+            NoiseToolStripMenuItem.Text = "Specifikt brus";
             bitRGBToolStripMenuItem.Text = "Enbits RGB";
             bitRGBToolStripMenuItem1.Text = "Twobits RGB";
             brightnessToolStripMenuItem.Text = "Ljusstyrka";
@@ -277,6 +411,8 @@ namespace fotofilter
             inverteraFärgerToolStripMenuItem.Text = "Inverted Colors";
             RGBFilterToolStripMenuItem.Text = "RGB Values";
             miniNoiseToolStripMenuItem.Text = "Mini Noice";
+            megaNoiseToolStripMenuItem.Text = "Mega Noice";
+            NoiseToolStripMenuItem.Text = "Custom Noice";
             bitRGBToolStripMenuItem.Text = "Single bit RGB";
             bitRGBToolStripMenuItem1.Text = "Double bit RGB";
             brightnessToolStripMenuItem.Text = "Brightness";
@@ -305,6 +441,8 @@ namespace fotofilter
             inverteraFärgerToolStripMenuItem.Text = "反転色";
             RGBFilterToolStripMenuItem.Text = "ＲＧＢの値";
             miniNoiseToolStripMenuItem.Text = "少し不鮮明";
+            megaNoiseToolStripMenuItem.Text = "非常に不明確";
+            NoiseToolStripMenuItem.Text = "カスタム量が不明確";
             bitRGBToolStripMenuItem.Text = "一ビットＲＧＢ";
             bitRGBToolStripMenuItem1.Text = "二ビットＲＧＢ";
             brightnessToolStripMenuItem.Text = "明度";
@@ -333,6 +471,8 @@ namespace fotofilter
             inverteraFärgerToolStripMenuItem.Text = "D'inverser les couleurs";
             RGBFilterToolStripMenuItem.Text = "Valeurs RVB";
             miniNoiseToolStripMenuItem.Text = "Bruit visuel mini";
+            megaNoiseToolStripMenuItem.Text = "Bruit visuel méga";
+            NoiseToolStripMenuItem.Text = "Quantité personnalisée de bruit visuel";
             bitRGBToolStripMenuItem.Text = "Une bit RVB";
             bitRGBToolStripMenuItem1.Text = "Deux bit RVB";
             brightnessToolStripMenuItem.Text = "Luminosité";
@@ -342,6 +482,7 @@ namespace fotofilter
             flipToolStripMenuItem.Text = "Retourner l'image horizontalement";
             flipVerticallyToolStripMenuItem.Text = "Retourner l'image verticalement";
         }
+
         private void creditToolStripMenuItem_Click(object sender, EventArgs e)
         { // när användaren trycker på credit visas credit rutan.
             Credit form3 = new Credit();
@@ -352,10 +493,14 @@ namespace fotofilter
             About form4 = new About();
             form4.ShowDialog();
         }
+        private void currentBuildToolStripMenuItem_Click(object sender, EventArgs e)
+        { // när användaren trycker på Current build visas build rutan.
+            Build form6 = new Build();
+            form6.ShowDialog();
+        }
 
         private void bildlistan() // bitmap x skapas och är en kopia av den nuvarande pbimage.image, x läggs till i versioner, värdet på listpos ändras 
         { 
-            //versioner.RemoveRange(listpos, versioner.Count - listpos);
             Bitmap x = new Bitmap(pbImage.Image);
             versioner.Add(x);
             listpos = versioner.Count - 1;

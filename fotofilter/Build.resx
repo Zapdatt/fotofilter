@@ -117,13 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="openFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <metadata name="saveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>267, 22</value>
-  </metadata>
+  <data name="ContentLabel.Text" xml:space="preserve">
+    <value>This current version is version v1.2 alpha.
+
+There have been a few changes since v1.0
+and v1.1, v1.2 features a complete working
+undo button as well as several features which
+were added in v1.1 The program is currntly in 
+a complete state.
+
+The program will most likely not be updated
+unless a terrible bug is found, or a redo button
+is deemed as needed.
+</value>
+  </data>
 </root>
